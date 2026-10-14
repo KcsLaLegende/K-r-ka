@@ -1,0 +1,31 @@
+name: koroba
+description: Prototype Kôrôba - La Grande Sœur Digitale des Artisanes Ivoiriennes
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.1.2
+  shared_preferences: ^2.2.3
+  intl: ^0.19.0
+  pdf: ^3.10.8
+  printing: ^5.12.0
+  url_launcher: ^6.3.0
+  speech_to_text: ^7.0.0
+
+dev_dependencies:
+  flutter_lints: ^4.0.0
+
+# Contournement : image 4.11.0 (dépendance de pdf/printing) est incompatible
+# avec archive 4.0.9 (méthode decodeLazy absente). On fixe une version saine.
+dependency_overrides:
+  image: 4.5.4
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/

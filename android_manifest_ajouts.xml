@@ -1,0 +1,18 @@
+<!-- À copier dans android/app/src/main/AndroidManifest.xml (après `flutter create .`) -->
+
+<!-- 1) AVANT la balise <application ...> : -->
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.RECORD_AUDIO"/>
+<uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30"/>
+<uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+
+<!-- 2) À l'intérieur de la balise <manifest>, après </application> : -->
+<queries>
+    <intent>
+        <action android:name="android.speech.RecognitionService"/>
+    </intent>
+    <intent>
+        <action android:name="android.intent.action.VIEW"/>
+        <data android:scheme="https"/>
+    </intent>
+</queries>
